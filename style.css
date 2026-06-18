@@ -275,6 +275,9 @@ footer {
   letter-spacing: 0.1em;
 }
 
+/* COuld not figure out how to make the scroll work properly, Gemini suggested this rule that
+controls the scroll animation and sliding so they appear properly, 
+had to be kept at the bottom of CSS so it overides the hidden states above.  */
 .visible,
 #hero h1.visible {
   opacity: 1;
