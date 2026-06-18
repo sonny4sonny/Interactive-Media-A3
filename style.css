@@ -1,0 +1,282 @@
+/* colours black and off-white keep it dark and terchy
+   yellow is used sparingly as an accent colour, only on labels and hovers I
+   wanted it to feel like a music site like i had for the inspo, not a generic template 
+   youd find on wix with the same high contrast rave referenced themes */
+
+:root {
+  --black: #080808;
+  --white: #f2f0e8;
+  --yellow: #f0e040;
+  --muted: #444;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* fragment mono for body monospace felt right for a label site, feels
+   the kind of typography you see on like record sleeves and studio gear
+   bebas neue used for display text, headlines and release titles, not entirely sure
+   if there are a technical complinatey typefaces but they work well for this application */
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Fragment Mono', monospace;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* hero takes up the full viewport height so the label name is the first
+   and only thing you see on arrival.no nav or clutter, just the title
+   opacity and transform start at 0 so the JS can animate them in on load */
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8vw;
+  position: relative;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+#hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 16vw, 14rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  color: var(--yellow);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 1.2s ease 0.4s;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 0;
+  left: 8vw;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 1s ease 1s;
+}
+
+/* release sections share the same layout rules so i combined them into one selector
+   artwork slides in from the left, info from the right opposing directions
+   feltt like a natural way to frame the content as a pairing */
+#release,
+#release-2 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10vh 8vw;
+  gap: 6vw;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.release-art,
+.release-2-art {
+  width: clamp(200px, 35vw, 420px);
+  aspect-ratio: 1;
+  background: #111;
+  border: 1px solid #222;
+  flex-shrink: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.release-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.release-info,
+.release-2-info {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.release-info h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+.meta span {
+  color: var(--white);
+}
+
+#artists {
+  min-height: 100vh;
+  padding: 10vh 8vw;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+/* artists grid uses auto-fit so it responds to screen width without media queries -thank you Mozilla v-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat
+   gap of 1px on a dark background creates a thin dividing line between cards
+   hover state is subtle, just a slight shift i didnt want it toomega*/
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+
+
+.artist-card {
+  background: var(--black);
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease, background 0.2s ease;
+}
+
+.artist-card:hover {
+  background: #0f0f0f;
+  cursor: pointer;
+}
+
+.num {
+  font-size: 0.55rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.artist-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.genre {
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+}
+
+.artist-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+#ethos {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh 8vw;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* ethos words start off-screen to the left and slide in on scroll
+   I had to google AI this butttt nth-child delays stagger the reveal so each word has its own moment
+   this section is the emotional core of the page spo I really wanted it to hit slowly  - Google Gemini Summary*/
+.ethos-word {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  line-height: 1;
+  display: block;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.ethos-word:nth-child(2) { transition-delay: 0.15s; }
+.ethos-word:nth-child(3) { transition-delay: 0.3s; }
+
+#contact {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh 8vw;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* contact links are large and dark by default, yellow on hover
+   the colour shift is the feedback so the user knows this is clickable (links work too)
+   kept the section minimal, two links only, no form or native elements
+   uses the same nth delay so they appear one at a time too - Google Gemini Summary*/
+.contact-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, color 0.2s ease;
+}
+
+.contact-link:nth-child(2) { transition-delay: 0.1s; }
+.contact-link:nth-child(3) { transition-delay: 0.2s; }
+
+.contact-link:hover {
+  color: var(--yellow);
+}
+
+footer {
+  padding: 2rem 8vw;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.visible,
+#hero h1.visible {
+  opacity: 1;
+  transform: none;
+}

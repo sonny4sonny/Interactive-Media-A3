@@ -1,0 +1,111 @@
+
+<!--  MIXEDSIGNALS label site — AT3
+     context: independent music label landing page
+     chosen interaction: scroll, used to pace the reveal of content section by section
+     rather than dumping everything on the page at once, which felt wrong for this context --> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIXEDSIGNALS</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Bebas+Neue&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- hero section with full viewport height so the label name hits hard on landing
+     wanted it to feel like a statement before tje other shit loads in -->
+    <section id="hero">
+      <h1 id="hero-title">MIXED<br>SIGNALS</h1>
+      <p class="tagline" id="hero-tagline">Independent Music</p>
+      <p class="scroll-hint" id="scroll-hint">scroll to explore</p>
+    </section>
+
+    <!-- release section artwork slides in from the left, info from the right
+     the opposing directions creates a sick sense of tension and movement   -->
+    <section id="release">
+        <div class="release-art">
+  <img src="your-move.jpg" alt="Your Move artwork" />
+</div>
+      </div>
+      <div class="release-info">
+        <p class="label">Latest Release</p>
+        <h2>Your Move </h2><br>
+        <div class="meta">
+          <p>Artist <span>Tarisayi</span></p>
+          <p>Label <span>MIXEDSIGNALS</span></p>
+          <p>Released <span>2026</span></p>
+        </div>
+      </div>
+    </section>
+
+     <section id="release-2">
+        <div class="release-art">
+  <img src="father.jpg" alt="Father artwork" />
+</div>
+      </div>
+      <div class="release-info">
+        <p class="label">Other Releases</p>
+        <h2>Father </h2><br>
+        <div class="meta">
+          <p>Artist <span>JB, Tarisayi</span></p>
+          <p>Label <span>MIXEDSIGNALS</span></p>
+          <p>Released <span>2025</span></p>
+        </div>
+      </div>
+    </section>
+
+<!-- artists grid amd info, kept it minimal, just an image and genre,
+     didnt want it to feel like a wiki page, just an introduction to our artists -->
+    <section id="artists">
+      <p class="section-label">Artists</p>
+      <div class="artists-grid">
+        <div class="artist-card">     
+          <h3>Tarisayi</h3>
+          <div class="artist-card"> 
+          <img src="tarisayi.jpg" alt="Tarisayi" />
+  
+         </div>
+          <p class="genre">Ambient / Electronic</p>
+        </div>
+        <div class="artist-card">
+          <h3>JB</h3>
+          <div class="artist-card">
+          <img src="JB.jpg" alt="JB" />
+  
+          </div>
+          <p class="genre">Experimental / Club</p>
+        </div>
+      </div>
+    </section>
+<!-- ethos section, the three words are the whole point of this sectio.
+     they reveal one at a time on scroll, community focused / creative / forward thinking
+     influenced by how warp.net handles identity, big bold and bare -->
+    <section id="ethos">
+      <p class="section-label">What we are</p>
+      <div>
+        <span class="ethos-word">Community Focused</span>
+        <span class="ethos-word">Creative</span>
+        <span class="ethos-word">Forward Thinking</span>
+      </div>
+    </section>
+<!-- contact section is stripped right back, just links, no forms or anythiug 
+     socials are direct links keeping it minimal means the user knows exactly what they can and should do -->
+    <section id="contact">
+      <p class="section-label">Get in touch</p>
+      <div class="contact-links">
+        <a href="https://www.instagram.com/mixedsignals.jpeg/" class="contact-link">Instagram</a>
+        <a href="https://soundcloud.com/mgmt-525141211" class="contact-link">Soundcloud</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>MIXEDSIGNALS - since 2023</p>
+      <p>All rights reserved</p>
+    </footer>
+
+  </body>
+</html>
